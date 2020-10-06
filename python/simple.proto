@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package simple;
+
+// リクエスト
+message SimpleRequest{
+}
+
+// レスポンス
+message SimpleResponse{
+    string text = 1;
+    string image = 2;
+}
+
+//RPCインターフェースの定義
+service SimpleService{
+    rpc SimpleSend (SimpleRequest) returns (SimpleResponse) {}
+}
